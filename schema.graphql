@@ -1,0 +1,18 @@
+scalar Datetime
+scalar JSON
+
+type Statistic {
+	id: String!,
+	source: String!,
+	stat_id: String!,
+	data: JSON,
+	create_date: Datetime,
+}
+
+type Query {
+	stats: [Statistic]!
+}
+
+type Mutation {
+	createStat(id: String!, source: String!, stat_id: String!, data: JSON, create_date: Datetime): Statistic
+}
